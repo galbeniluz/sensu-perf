@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-/root/go/bin/loadit -backends ws://backend1:8081,ws://backend2:8081,ws://backend3:8081 \
+/root/go/bin/loadit -backends ws://sensugo-backend-stg-0.sensugo-backend-stg.sensugo.fog-stg.taboolasyndication.com:8081,ws://sensugo-backend-stg-1.sensugo-backend-stg.sensugo.fog-stg.taboolasyndication.com:8081,ws://sensugo-backend-stg-2.sensugo-backend-stg.sensugo.fog-stg.taboolasyndication.com:8081 \
 -subscriptions large_cluster_test_3 \
 -count 3500 \
 -keepalive-interval 60 \

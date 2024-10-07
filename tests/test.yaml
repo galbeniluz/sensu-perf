@@ -1,0 +1,43 @@
+type: CheckConfig
+api_version: core/v2
+spec:
+  metadata:
+    created_by: admin
+    labels:
+      dashboard: sensu.taboolasyndication.com
+      team: SPD
+      pagerteam: SPD_data_team_office_hours
+      runbook: http://brain.taboola.com/display/RUN/cassandra_max_compacted_partition_size
+      sensu.io/managed_by: jenkins
+    annotations:
+      description: Cassandra max partition size is dangerously high
+      fatigue_check/occurrences: "3"
+      sensu.io/plugins/sensu-pagerduty-handler/config/token: ac3d2de31bbf47b1ac10e57bf2775b84
+      sensu.io/plugins/slack/config/channel: '#ctaz-cassandra-alerts'
+    name: cassandra_max_compacted_partition_size
+    namespace: default
+  check_hooks: null
+  command: '!sensu_test_check!'
+  env_vars: null
+  handlers:
+  - slack
+  - pagerduty
+  pipelines: []
+  high_flap_threshold: 0
+  interval: 10
+  low_flap_threshold: 0
+  output_metric_format: ""
+  output_metric_handlers: null
+  proxy_entity_name: ctaz.taboolasyndication.com
+  publish: true
+  round_robin: true
+  runtime_assets:
+  - taboola-services
+  subscriptions:
+  - large_cluster_test_1
+  - large_cluster_test_2
+  secrets: null
+  stdin: false
+  subdue: null
+  timeout: 55
+  ttl: 0
